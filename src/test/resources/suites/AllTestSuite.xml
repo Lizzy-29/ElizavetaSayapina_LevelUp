@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="All tests suit">
+
+    <test name="All Tests package">
+    <packages>
+        <package name="ru.levelp.at.homework3.hooks.*"></package>
+    </packages>
+    </test>
+
+    <test name="All Test Tests Classes">
+        <classes>
+            <class name="ru.levelp.at.homework3.hooks.PositiveLuckyTicketTest"/>
+            <class name="ru.levelp.at.homework3.hooks.NegativeLuckyTicketTest"/>
+            <class name="ru.levelp.at.homework3.hooks.BaseLuckyTicketTest"/>
+        </classes>
+    </test>
+
+</suite>

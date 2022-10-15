@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Negative tests suit">
+
+    <test name="Negative Tests package">
+    <packages>
+        <package name="ru.levelp.at.homework3.hooks.*"></package>
+    </packages>
+    </test>
+
+    <test name="Negative Test Tests Classes">
+        <classes>
+            <class name="ru.levelp.at.homework3.hooks.NegativeLuckyTicketTest"/>
+        </classes>
+    </test>
+</suite>

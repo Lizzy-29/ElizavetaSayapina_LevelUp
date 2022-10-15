@@ -1,4 +1,4 @@
-package ru.levelp.at.homework3;
+package ru.levelp.at.homework3.hooks;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -6,15 +6,16 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import ru.levelp.at.homework3.LuckyTicket;
 
-public class LuckyTicketTest {
+
+public class NegativeLuckyTicketTest {
 
     private static final String INPUT = String.valueOf("123006");
-    private static final String WRONG_INPUT = String.valueOf("346279");
     private static final String EMPTY_INPUT = String.valueOf(null);
     private static final String EXPECTED_OUTPUT = String.valueOf("true");
 
-    private LuckyTicket luckyTicket = new LuckyTicket();
+    private ru.levelp.at.homework3.LuckyTicket luckyTicket = new LuckyTicket();
 
     @BeforeClass
     public void beforeClass() {
@@ -45,14 +46,14 @@ public class LuckyTicketTest {
     public void emptyInputTest() {
         System.out.println("EmptyInputTest");
 
-        String actualOutput;
+        String actualResult;
 
         if (LuckyTicket.isMyTicketLucky(Integer.parseInt(new String(EMPTY_INPUT)))) {
-            actualOutput = String.valueOf(true);
+            actualResult = String.valueOf(true);
         } else {
-            actualOutput = String.valueOf(false);
+            actualResult = String.valueOf(false);
 
-            Assertions.assertTrue(actualOutput.isEmpty());
+            Assertions.assertTrue(actualResult.isEmpty());
         }
     }
 

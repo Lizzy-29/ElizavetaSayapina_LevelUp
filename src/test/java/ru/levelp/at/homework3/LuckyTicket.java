@@ -1,9 +1,9 @@
 package ru.levelp.at.homework3;
 
-public class luckyTicket {
+public class LuckyTicket {
     public String isMyTicketLucky;
 
-    static boolean isMyTicketLucky(int ticketNumber) {
+    public static boolean isMyTicketLucky(int ticketNumber) {
 
         int number1 = ticketNumber / 100000;
         int number2 = (ticketNumber / 10000) % 10;
@@ -13,6 +13,7 @@ public class luckyTicket {
         int number6 = ticketNumber % 10;
 
         return number1 + number2 + number3 == number4 + number5 + number6;
+
     }
 
     public static void main(String[] args) {

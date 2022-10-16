@@ -1,11 +1,11 @@
 package ru.levelp.at.homework3.hooks;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import ru.levelp.at.homework3.LuckyTicket;
 
 
@@ -29,20 +29,6 @@ public class NegativeLuckyTicketTest {
     }
 
     @Test
-    public void positiveTestForLuckyTicket() {
-        System.out.println("positiveTestForLuckyTicket");
-
-        String actualOutput;
-        if (LuckyTicket.isMyTicketLucky(Integer.parseInt(new String(INPUT)))) {
-            actualOutput = String.valueOf(true);
-        } else {
-            actualOutput = String.valueOf(false);
-
-            Assertions.assertEquals(EXPECTED_OUTPUT, actualOutput);
-        }
-    }
-
-    @Test
     public void emptyInputTest() {
         System.out.println("EmptyInputTest");
 
@@ -53,7 +39,7 @@ public class NegativeLuckyTicketTest {
         } else {
             actualResult = String.valueOf(false);
 
-            Assertions.assertTrue(actualResult.isEmpty());
+            Assertions.assertThat(actualResult.isEmpty());
         }
     }
 
@@ -68,7 +54,7 @@ public class NegativeLuckyTicketTest {
         } else {
             actualOutput = String.valueOf(false);
 
-            Assertions.assertTrue(actualOutput.isEmpty());
+            Assertions.assertThat(actualOutput.isEmpty());
         }
     }
 
@@ -83,6 +69,5 @@ public class NegativeLuckyTicketTest {
         System.out.println("after class");
     }
 }
-
 
 

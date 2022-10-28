@@ -29,3 +29,5 @@ public class LuckyTicket {
         System.out.println(isMyTicketLucky(null));
     }
 }
+
+//Комментарий

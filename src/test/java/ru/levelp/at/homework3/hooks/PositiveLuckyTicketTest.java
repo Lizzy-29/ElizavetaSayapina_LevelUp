@@ -7,8 +7,9 @@ import ru.levelp.at.homework3.LuckyTicket;
 public class PositiveLuckyTicketTest extends BaseLuckyTicketTest {
 
     private static final String INPUT = String.valueOf("123006");
-    private static final String WRONG_INPUT = String.valueOf("346279");
+    private static final String WRONG_INPUT = String.valueOf("350777");
     private static final String EXPECTED_OUTPUT = String.valueOf("true");
+    private static final String EXPECTED_OUTPUT_2 = String.valueOf("false");
 
     private ru.levelp.at.homework3.LuckyTicket luckyTicket = new LuckyTicket();
 
@@ -31,12 +32,12 @@ public class PositiveLuckyTicketTest extends BaseLuckyTicketTest {
         System.out.println("positiveTest2ForLuckyTicket");
         String actualOutput;
 
-        if (LuckyTicket.isMyTicketLucky(Integer.parseInt(new String(INPUT)))) {
-            actualOutput = String.valueOf(true);
-        } else {
+        if (LuckyTicket.isMyTicketLucky(Integer.parseInt(new String(WRONG_INPUT)))) {
             actualOutput = String.valueOf(false);
+        } else {
+            actualOutput = String.valueOf(true);
 
-            Assertions.assertThat(actualOutput).isNotEqualTo(EXPECTED_OUTPUT);
+            Assertions.assertThat(actualOutput).isNotEqualTo(EXPECTED_OUTPUT_2);
         }
     }
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="All tests suit">
 
-    <test name="All Tests package">
+    <test name="All Test tests">
     <packages>
         <package name="ru.levelp.at.homework3.hooks.*"></package>
     </packages>

@@ -1,4 +1,4 @@
-package ru.levelp.at.homework3;
+package ru.levelp.at.homework2;
 
 public class LuckyTicket {
     public String isMyTicketLucky;

@@ -4,13 +4,13 @@
 
     <test name="Negative Tests package">
     <packages>
-        <package name="ru.levelp.at.homework3.hooks.*"></package>
+        <package name="ru.levelp.at.homework2.hooks.*"></package>
     </packages>
     </test>
 
     <test name="Negative Test Tests Classes">
         <classes>
-            <class name="ru.levelp.at.homework3.hooks.NegativeLuckyTicketTest"/>
+            <class name="ru.levelp.at.homework2.hooks.NegativeLuckyTicketTest"/>
         </classes>
     </test>
 </suite>

@@ -1,8 +1,8 @@
-package ru.levelp.at.homework3.hooks;
+package ru.levelp.at.homework2.hooks;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
-import ru.levelp.at.homework3.LuckyTicket;
+import ru.levelp.at.homework2.LuckyTicket;
 
 public class PositiveLuckyTicketTest extends BaseLuckyTicketTest {
 
@@ -11,7 +11,7 @@ public class PositiveLuckyTicketTest extends BaseLuckyTicketTest {
     private static final String EXPECTED_OUTPUT = String.valueOf("true");
     private static final String EXPECTED_OUTPUT_2 = String.valueOf("false");
 
-    private ru.levelp.at.homework3.LuckyTicket luckyTicket = new LuckyTicket();
+    private ru.levelp.at.homework2.LuckyTicket luckyTicket = new LuckyTicket();
 
     @Test
     public void positiveTestForLuckyTicket() {

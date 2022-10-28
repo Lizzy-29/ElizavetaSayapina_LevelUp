@@ -1,4 +1,4 @@
-package ru.levelp.at.homework3;
+package ru.levelp.at.homework2;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.BeforeClass;

@@ -1,19 +1,19 @@
-package ru.levelp.at.homework3.hooks;
+package ru.levelp.at.homework2.hooks;
 
-import static ru.levelp.at.homework3.LuckyTicket.isMyTicketLucky;
+import static ru.levelp.at.homework2.LuckyTicket.isMyTicketLucky;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import ru.levelp.at.homework3.LuckyTicket;
+import ru.levelp.at.homework2.LuckyTicket;
 
 public class NegativeLuckyTicketTest {
 
     private static final String INPUT = (null);
     private static final String EXPECTED_OUTPUT = String.valueOf("true");
 
-    private ru.levelp.at.homework3.LuckyTicket luckyTicket = new LuckyTicket();
+    private ru.levelp.at.homework2.LuckyTicket luckyTicket = new LuckyTicket();
 
     @BeforeClass
     public void beforeClass() {

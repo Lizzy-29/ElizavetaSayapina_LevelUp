@@ -27,6 +27,7 @@
         <spring-jdbc.version>5.3.23</spring-jdbc.version>
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <webdrivermanager.version>5.3.0</webdrivermanager.version>
 
         <suite.base.dir>${project.basedir}/src/test/resources</suite.base.dir>
     </properties>
@@ -90,12 +91,23 @@
     </build>
 
     <dependencies>
-
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.6.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.0</version>
         </dependency>
 
         <dependency>

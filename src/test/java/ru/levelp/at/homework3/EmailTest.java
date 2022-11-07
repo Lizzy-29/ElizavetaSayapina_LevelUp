@@ -15,6 +15,7 @@ public class EmailTest {
 
     private static final String Email_URL = "https://accounts.google.com/";
     private static final String Email_BOX = "https://mail.google.com/mail/u/0/#inbox";
+    private static final String LogOut = "https://accounts.google.com/Logout?hl=ru&continue=https://mail.google.com&service=mail&timeStmp=1667864634&secTok=.AG5fkS9ikXFc0LMIHjNNRqCGLp-tvCK4Cg&ec=GAdAFw&hl=ru";
 
     private WebDriver webDriver;
 
@@ -109,8 +110,11 @@ public class EmailTest {
 
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        webDriver.findElement(By.xpath("//div//div//div//div//span//a[contains(text(),'Выйти')]"))
-                 .click();
+        WebElement iFrame = webDriver.findElement(By.xpath("//iframe[@name=\"account\"]"));
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        webDriver.switchTo().frame(iFrame);
+
+        webDriver.navigate().to(LogOut);
     }
 
     @Test
@@ -189,8 +193,11 @@ public class EmailTest {
 
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        webDriver.findElement(By.xpath("//div//div//div//div//span//a[contains(text(),'Выйти')]"))
-                 .click();
+        WebElement iFrame = webDriver.findElement(By.xpath("//iframe[@name=\"account\"]"));
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        webDriver.switchTo().frame(iFrame);
+
+        webDriver.navigate().to(LogOut);
     }
     @Test
     public void Task_3() {
@@ -276,14 +283,15 @@ public class EmailTest {
 
         webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        webDriver.findElement(By.xpath("//div//div//div//div//span//a[contains(text(),'Выйти')]"))
-                 .click();
+        WebElement iFrame = webDriver.findElement(By.xpath("//iframe[@name=\"account\"]"));
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        webDriver.switchTo().frame(iFrame);
+
+        webDriver.navigate().to(LogOut);
     }
-
-
 
     @AfterMethod
     public void tearDown(){
-        //webDriver.quit();
+        webDriver.quit();
     }
 }

@@ -1,6 +1,7 @@
 package ru.levelp.at.homework4.technical_classes;
 
 import java.time.Duration;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AuthPage {
+    Faker faker = new Faker();
+    String email = faker.internet().emailAddress();
+    String password = faker.internet().password();
 
     private static final String Email_URL = "https://accounts.google.com/";
     private static final String LogOut = "https://accounts.google.com/Logout?hl=ru&continue=https://mail.google.com&service=mail&timeStmp=1667864634&secTok=.AG5fkS9ikXFc0LMIHjNNRqCGLp-tvCK4Cg&ec=GAdAFw&hl=ru";

@@ -71,6 +71,10 @@ public class CreateLetter {
         wait.until(ExpectedConditions.visibilityOf(fillAddress)).sendKeys("njanke-vensen@rambler.ru");
     }
 
+    public void fillTestAddress (){
+        wait.until(ExpectedConditions.visibilityOf(fillAddress)).sendKeys("litavond78@gmail.com");
+    }
+
     public void textOfLetter (){
         wait.until(ExpectedConditions.visibilityOf(textOfLetter)).sendKeys(" Test_Test_Test");
     }

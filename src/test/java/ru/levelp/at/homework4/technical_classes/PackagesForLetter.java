@@ -67,7 +67,8 @@ public class PackagesForLetter {
     }
 
     public void setIncomingLetters(){
-        wait.until(ExpectedConditions.visibilityOf(incomingLetters)).isDisplayed();
+        driver.findElement(By.xpath("//*[contains(text(),'Входящие')]"))
+                 .isDisplayed();
     }
 
     public void setToBasket(){

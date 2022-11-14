@@ -18,6 +18,9 @@ public class Checks {
     @FindBy(xpath = "//*[contains(text(),'njanke-vensen@rambler.ru')]")
     private WebElement email;
 
+    @FindBy(xpath = "//*[contains(text(),'litavond78@gmail.com')]")
+    private WebElement testEmail;
+
     @FindBy(xpath ="//*[contains(text(),'Test')]")
     private WebElement theme;
 
@@ -32,8 +35,13 @@ public class Checks {
     }
 
     public void setEmail (){
-        driver.findElement(By.xpath("//*[contains(text(),'njanke-vensen@rambler.ru')]"))
+        driver.findElement(By.xpath("//*[contains(text(),'litavond78@gmail.com')]"))
                  .isDisplayed();
+    }
+
+    public void setTestEmail (){
+        driver.findElement(By.xpath("//*[contains(text(),'njanke-vensen@rambler.ru')]"))
+              .isDisplayed();
     }
 
     public void setTheme(){

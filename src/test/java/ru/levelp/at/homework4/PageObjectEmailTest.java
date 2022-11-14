@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.levelp.at.homework4.technical_classes.AuthPage;
@@ -86,12 +87,14 @@ public class PageObjectEmailTest {
         AuthPage.setFillContinue();
         Assertions.assertThat(webDriver.getTitle())
                   .isEqualTo("Вход – Google Аккаунты");
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         AuthPage.setFillPassword();
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         AuthPage.setContinueAuthorization();
+        Assertions.assertThat(webDriver.findElement(By.cssSelector(".g3lg0e")).isEnabled());
 
         System.out.println("Создать новое письмо (заполнить адресата, тему письма и тело)");
         var CreateLetter = new CreateLetter(webDriver);
-
         CreateLetter.open();
         CreateLetter.newMessage();
         CreateLetter.fillTheme();
@@ -129,17 +132,20 @@ public class PageObjectEmailTest {
         AuthPage.setFillContinue();
         Assertions.assertThat(webDriver.getTitle())
                   .isEqualTo("Вход – Google Аккаунты");
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         AuthPage.setFillPassword();
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         AuthPage.setContinueAuthorization();
         Assertions.assertThat(webDriver.findElement(By.cssSelector(".g3lg0e")).isEnabled());
 
         System.out.println("Создать новое письмо (заполнить адресата, тему письма и тело)");
         var CreateLetter = new CreateLetter(webDriver);
+        CreateLetter.open();
         CreateLetter.newMessage();
         CreateLetter.fillTheme();
         CreateLetter.choiceAddress();
         CreateLetter.choiceTo();
-        CreateLetter.fillAddress();
+        CreateLetter.fillTestAddress();
         CreateLetter.textOfLetter();
 
         System.out.println("Отправление письма");
@@ -149,6 +155,7 @@ public class PageObjectEmailTest {
         var PackagesForLetter = new PackagesForLetter(webDriver);
         var Checks = new Checks(webDriver);
         PackagesForLetter.setIncomingLetters();
+        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         Checks.setText();
 
         System.out.println("Проверяем что контент, адресата и тему письма");
@@ -170,11 +177,8 @@ public class PageObjectEmailTest {
         AuthPage.setLogOut();
     }
 
-    /*@AfterMethod
+    @AfterMethod
     public void tearDown(){
         webDriver.quit();
     }
-
-     */
-
 }

@@ -1,6 +1,14 @@
-package ru.levelp.at.homework3;
+package ru.levelp.at.homework4;
 
-/*public class EmailTest {
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class BaseEmailTest {
 
     private static final String Email_URL = "https://accounts.google.com/";
     private static final String Email_BOX = "https://mail.google.com/mail/u/0/#inbox";
@@ -17,7 +25,7 @@ package ru.levelp.at.homework3;
 
     @Test
     public void Task_1() {
-        System.out.println("Проверка успешности авторизации");
+      /*  System.out.println("Проверка успешности авторизации");
 
         WebElement Login  = webDriver.findElement(By.id("identifierId"));
         Login.sendKeys("litavond78@gmail.com");
@@ -40,6 +48,8 @@ package ru.levelp.at.homework3;
 
         Assertions.assertThat(webDriver.findElement(By.cssSelector(".g3lg0e")).isEnabled());
 
+       */
+/*
         System.out.println("Создать новое письмо (заполнить адресата, тему письма и тело)");
 
         webDriver.navigate().to(Email_BOX);
@@ -60,11 +70,15 @@ package ru.levelp.at.homework3;
         webDriver.findElement(By.xpath("//div[@aria-label=\"Текст письма\"]"))
                  .sendKeys(" Test_Test_Test");
 
+ */
+/*
         System.out.println("Проверяем что письмо сохранено в черновиках");
         webDriver.findElement(By.xpath("//span[contains(text(),'Черновик сохранен')]"))
                  .isDisplayed();
 
-        System.out.println("Проверяем что контент, адресата и тему письма");
+ */
+
+        System.out.println("Проверяем контент, адресата и тему письма");
         webDriver.findElement(By.xpath("//*[contains(text(),'njanke-vensen@rambler.ru')]"))
             .isDisplayed();
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
@@ -72,42 +86,40 @@ package ru.levelp.at.homework3;
         webDriver.findElement(By.xpath("//*[contains(text(),'Test')]"))
                  .isDisplayed();
 
+        /*
         System.out.println("Отправление письма");
         webDriver.findElement(By.xpath("//tr//td//div//div[contains(text(),\"Отправить\")]"))
             .click();
 
+         */
+
         System.out.println("Письмо исчезло из черновиков");
-        webDriver.findElement(By.xpath("//*[contains(text(),'Черновики')]"))
-                 .isDisplayed();
+        /*
         webDriver.findElement(By.xpath("//*[contains(text(),'Черновики')]"))
             .click();
+
+         */
         webDriver.findElement(By.xpath("//*[contains(text(),'Нет сохраненных черновиков.')]"))
                  .isDisplayed();
 
+        /*
         System.out.println("Письмо появилось в папке отправленные");
         webDriver.findElement(By.xpath("//*[contains(text(),'Отправленные')]"))
                  .click();
+
+         */
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
                  .isDisplayed();
-
+/*
         System.out.println("Выйти из учётной записи");
-        webDriver.findElement(By.xpath("//a[@aria-label='Аккаунт Google: Lita Von D  \n"
-                     + "(litavond78@gmail.com)']"))
-                 .click();
-        webDriver.findElement(By.xpath("//*[contains(text(),'Выйти')]"))
-                 .isDisplayed();
-
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        WebElement iFrame = webDriver.findElement(By.xpath("//iframe[@name=\"account\"]"));
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        webDriver.switchTo().frame(iFrame);
-
         webDriver.navigate().to(LogOut);
+
+ */
     }
 
     @Test
     public void Task_2() {
+        /*
         System.out.println("Войти в почту");
         WebElement Login  = webDriver.findElement(By.id("identifierId"));
         Login.sendKeys("litavond78@gmail.com");
@@ -130,6 +142,8 @@ package ru.levelp.at.homework3;
 
         Assertions.assertThat(webDriver.findElement(By.cssSelector(".g3lg0e")).isEnabled());
 
+         */
+        /*
         System.out.println("Создать новое письмо");
         webDriver.navigate().to(Email_BOX);
         webDriver.findElement(By.xpath("//*[text()=\"Написать\"]"))
@@ -149,6 +163,8 @@ package ru.levelp.at.homework3;
         webDriver.findElement(By.xpath("//div[@aria-label=\"Текст письма\"]"))
                  .sendKeys(" Test_Test_Test");
 
+         */
+        /*
         System.out.println("Отправление письма");
         webDriver.findElement(By.xpath("//tr//td//div//div[contains(text(),\"Отправить\")]"))
                  .click();
@@ -159,13 +175,17 @@ package ru.levelp.at.homework3;
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
                  .isDisplayed();
 
+         */
+
         System.out.println("Письмо появилось в папке Test");
+        /*
         webDriver.findElement(By.xpath("//*[contains(text(),'TEST')]"))
                  .click();
+         */
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
                  .isDisplayed();
 
-        System.out.println("Проверяем что контент, адресата и тему письма");
+        System.out.println("Проверяем контент, адресата и тему письма");
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
                  .isDisplayed();
         webDriver.findElement(By.xpath("//*[contains(text(),'Test')]"))
@@ -174,22 +194,11 @@ package ru.levelp.at.homework3;
         .isDisplayed();
 
         System.out.println("Выйти из учётной записи");
-        webDriver.findElement(By.xpath("//a[@aria-label='Аккаунт Google: Lita Von D  \n"
-                     + "(litavond78@gmail.com)']"))
-                 .click();
-        webDriver.findElement(By.xpath("//*[contains(text(),'Выйти')]"))
-                 .isDisplayed();
-
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        WebElement iFrame = webDriver.findElement(By.xpath("//iframe[@name=\"account\"]"));
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        webDriver.switchTo().frame(iFrame);
-
         webDriver.navigate().to(LogOut);
     }
     @Test
     public void Task_3() {
+        /*
         System.out.println("Войти в почту");
         WebElement Login  = webDriver.findElement(By.id("identifierId"));
         Login.sendKeys("litavond78@gmail.com");
@@ -212,6 +221,8 @@ package ru.levelp.at.homework3;
 
         Assertions.assertThat(webDriver.findElement(By.cssSelector(".g3lg0e")).isEnabled());
 
+         */
+/*
         System.out.println("Создать новое письмо");
         webDriver.navigate().to(Email_BOX);
         webDriver.findElement(By.xpath("//*[text()=\"Написать\"]"))
@@ -231,13 +242,20 @@ package ru.levelp.at.homework3;
         webDriver.findElement(By.xpath("//div[@aria-label=\"Текст письма\"]"))
                  .sendKeys(" Test_Test_Test");
 
+ */
+/*
         System.out.println("Отправление письма");
         webDriver.findElement(By.xpath("//tr//td//div//div[contains(text(),\"Отправить\")]"))
                  .click();
 
+ */
+
         System.out.println("Письмо появилось в папке Входящие");
+        /*
         webDriver.findElement(By.xpath("//*[contains(text(),'Входящие')]"))
                  .isDisplayed();
+
+         */
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
                  .isDisplayed();
 
@@ -250,33 +268,30 @@ package ru.levelp.at.homework3;
                  .isDisplayed();
 
         System.out.println("Удалить письмо");
+        /*
         webDriver.findElement(By.xpath("//div//div//div//div//div//div//div//div//div//div[@data-tooltip=\"Выбрать\"]//span"))
                  .click();
         webDriver.findElement(By.xpath("//body/div[7]/div[3]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]"))
                  .click();
 
+         */
+
         System.out.println("Письмо появилось в папке Корзина");
+        /*
         webDriver.findElement(By.xpath("//span[@role=\"button\"]"))
                  .click();
         webDriver.findElement(By.xpath("//a[contains(text(),'Корзина')]"))
                  .click();
+
+         */
         webDriver.findElement(By.xpath("//*[contains(text(),'Test_Test_Test')]"))
                  .isDisplayed();
 
+        /*
         System.out.println("Выйти из учётной записи");
-        webDriver.findElement(By.xpath("//a[@aria-label='Аккаунт Google: Lita Von D  \n"
-                     + "(litavond78@gmail.com)']"))
-                 .click();
-        webDriver.findElement(By.xpath("//*[contains(text(),'Выйти')]"))
-                 .isDisplayed();
-
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-        WebElement iFrame = webDriver.findElement(By.xpath("//iframe[@name=\"account\"]"));
-        webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        webDriver.switchTo().frame(iFrame);
-
         webDriver.navigate().to(LogOut);
+
+         */
     }
 
     @AfterMethod
@@ -284,5 +299,3 @@ package ru.levelp.at.homework3;
         webDriver.quit();
     }
 }
-
- */

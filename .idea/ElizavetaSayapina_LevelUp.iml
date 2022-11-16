@@ -129,5 +129,7 @@
     <orderEntry type="library" name="Maven: org.apache.groovy:groovy-json:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:rest-assured-common:5.2.0" level="project" />
     <orderEntry type="library" name="Maven: io.rest-assured:xml-path:5.2.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.scribejava:scribejava-apis:2.5.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.github.scribejava:scribejava-core:2.5.3" level="project" />
   </component>
 </module>
